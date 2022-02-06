@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BL;
 
 namespace RandevuYonetimSistemi.WindowsFormsUI
 {
@@ -16,7 +17,7 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
         {
             InitializeComponent();
         }
-
+        
         private void DoktorYonetimi_Load(object sender, EventArgs e)
         {
 

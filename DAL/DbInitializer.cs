@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace DAL
 {
-    class DbInitializer : CreateDatabaseIfNotExists<DatabaseContext>
+    class DbInitializer : DropCreateDatabaseIfModelChanges<DatabaseContext>
     {
         protected override void Seed(DatabaseContext context)
         {

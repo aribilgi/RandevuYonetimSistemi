@@ -31,6 +31,7 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
         {
             this.dgvKullanicilar = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbDurum = new System.Windows.Forms.CheckBox();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnEkle = new System.Windows.Forms.Button();
@@ -44,13 +45,14 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbDurum = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKullanicilar)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvKullanicilar
             // 
+            this.dgvKullanicilar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvKullanicilar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvKullanicilar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKullanicilar.Location = new System.Drawing.Point(12, 12);
             this.dgvKullanicilar.Name = "dgvKullanicilar";
@@ -58,6 +60,7 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             this.dgvKullanicilar.RowTemplate.Height = 24;
             this.dgvKullanicilar.Size = new System.Drawing.Size(776, 222);
             this.dgvKullanicilar.TabIndex = 1;
+            this.dgvKullanicilar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKullanicilar_CellClick);
             // 
             // groupBox1
             // 
@@ -82,23 +85,37 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kullanıcı Bilgileri";
             // 
+            // cbDurum
+            // 
+            this.cbDurum.AutoSize = true;
+            this.cbDurum.Location = new System.Drawing.Point(390, 99);
+            this.cbDurum.Name = "cbDurum";
+            this.cbDurum.Size = new System.Drawing.Size(72, 21);
+            this.cbDurum.TabIndex = 10;
+            this.cbDurum.Text = "Durum";
+            this.cbDurum.UseVisualStyleBackColor = true;
+            // 
             // btnSil
             // 
+            this.btnSil.Enabled = false;
             this.btnSil.Location = new System.Drawing.Point(390, 159);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(75, 23);
             this.btnSil.TabIndex = 9;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnGuncelle
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(287, 159);
+            this.btnGuncelle.Enabled = false;
+            this.btnGuncelle.Location = new System.Drawing.Point(281, 159);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(75, 23);
+            this.btnGuncelle.Size = new System.Drawing.Size(90, 23);
             this.btnGuncelle.TabIndex = 8;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnEkle
             // 
@@ -108,6 +125,7 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             this.btnEkle.TabIndex = 7;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // txtEmail
             // 
@@ -189,16 +207,6 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             this.label1.TabIndex = 0;
             this.label1.Text = "Adı";
             // 
-            // cbDurum
-            // 
-            this.cbDurum.AutoSize = true;
-            this.cbDurum.Location = new System.Drawing.Point(390, 99);
-            this.cbDurum.Name = "cbDurum";
-            this.cbDurum.Size = new System.Drawing.Size(72, 21);
-            this.cbDurum.TabIndex = 10;
-            this.cbDurum.Text = "Durum";
-            this.cbDurum.UseVisualStyleBackColor = true;
-            // 
             // KullaniciYonetimi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -209,6 +217,7 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             this.Name = "KullaniciYonetimi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kullanıcı Yönetimi";
+            this.Load += new System.EventHandler(this.KullaniciYonetimi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKullanicilar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

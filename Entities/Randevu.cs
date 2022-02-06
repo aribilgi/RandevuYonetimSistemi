@@ -1,7 +1,9 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities
 {
+    [Table("Randevular")]
     public class Randevu : IEntity
     {
         public int Id { get; set; }
