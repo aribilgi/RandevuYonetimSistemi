@@ -125,6 +125,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{aae86705-236e-42d7-9873-bd842bc96cbf}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{6a116b43-b171-4af4-a77a-94c836203247}</Project>
       <Name>Entities</Name>
