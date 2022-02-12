@@ -52,6 +52,8 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             // 
             // dgvDoktorlar
             // 
+            this.dgvDoktorlar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDoktorlar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvDoktorlar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDoktorlar.Location = new System.Drawing.Point(12, 12);
             this.dgvDoktorlar.Name = "dgvDoktorlar";
@@ -59,6 +61,7 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             this.dgvDoktorlar.RowTemplate.Height = 24;
             this.dgvDoktorlar.Size = new System.Drawing.Size(776, 222);
             this.dgvDoktorlar.TabIndex = 0;
+            this.dgvDoktorlar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoktorlar_CellClick);
             // 
             // groupBox1
             // 
@@ -101,6 +104,7 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             this.btnGuncelle.TabIndex = 8;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnEkle
             // 
@@ -110,6 +114,7 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             this.btnEkle.TabIndex = 7;
             this.btnEkle.Text = "Ekle";
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // txtEmail
             // 

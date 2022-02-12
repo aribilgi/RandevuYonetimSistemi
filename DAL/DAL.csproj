@@ -52,6 +52,11 @@
   <ItemGroup>
     <Compile Include="DatabaseContext.cs" />
     <Compile Include="DbInitializer.cs" />
+    <Compile Include="Migrations\202202121324158_InitialCreate.cs" />
+    <Compile Include="Migrations\202202121324158_InitialCreate.Designer.cs">
+      <DependentUpon>202202121324158_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +68,11 @@
       <Project>{6A116B43-B171-4AF4-A77A-94C836203247}</Project>
       <Name>Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202202121324158_InitialCreate.resx">
+      <DependentUpon>202202121324158_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

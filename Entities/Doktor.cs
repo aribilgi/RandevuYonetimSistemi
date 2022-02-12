@@ -9,18 +9,18 @@ namespace Entities
     public class Doktor : IEntity
     {
         public int Id { get; set; }
-        [StringLength(50)]
+        [StringLength(50), Required]
         public string Adi { get; set; }
-        [StringLength(50)]
+        [StringLength(50), Required]
         public string Soyadi { get; set; }
-        [StringLength(11)]
+        [StringLength(11), Required]
         public string TcNo { get; set; }
         [StringLength(15)]
         public string Telefon { get; set; }
         [StringLength(50)]
         public string Email { get; set; }
         public string Adres { get; set; }
-        public DateTime KayitTarihi { get; set; }
+        public DateTime? KayitTarihi { get; set; }
         public virtual List<Randevu> Randevular { get; set; }
     }
 }

@@ -9,14 +9,14 @@ namespace Entities
     public class Hasta : IEntity
     {
         public int Id { get; set; }
-        [StringLength(50)]
+        [StringLength(50), Required]
         public string Adi { get; set; }
-        [StringLength(50)]
+        [StringLength(50), Required]
         public string Soyadi { get; set; }
-        [StringLength(11)]
+        [StringLength(11), Required]
         public string TcNo { get; set; }
         public int Yasi { get; set; }
-        [StringLength(15)]
+        [StringLength(15), Required]
         public string Telefon { get; set; }
         [StringLength(50)]
         public string Email { get; set; }
@@ -27,7 +27,7 @@ namespace Entities
         public string KanGrubu { get; set; }
         [StringLength(50)]
         public string Meslek { get; set; }
-        public DateTime KayitTarihi { get; set; }
+        public DateTime? KayitTarihi { get; set; }
         public virtual List<Randevu> Randevular { get; set; }
     }
 }

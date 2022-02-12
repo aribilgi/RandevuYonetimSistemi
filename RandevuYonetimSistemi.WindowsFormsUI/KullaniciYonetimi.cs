@@ -66,7 +66,7 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
                 Adi = txtAdi.Text,
                 Durum = cbDurum.Checked,
                 Email = txtEmail.Text,
-                KayitTarihi = DateTime.Now,
+                //KayitTarihi = DateTime.Now,
                 KullaniciAdi = txtKullaniciAdi.Text,
                 Sifre = txtSifre.Text,
                 Soyadi = txtSoyadi.Text

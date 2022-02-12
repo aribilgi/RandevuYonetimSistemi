@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace DAL
 {
-    class DbInitializer : DropCreateDatabaseIfModelChanges<DatabaseContext>
+    class DbInitializer : CreateDatabaseIfNotExists<DatabaseContext>
     {
         protected override void Seed(DatabaseContext context)
         {
@@ -15,6 +15,7 @@ namespace DAL
                 Kullanici kullanici = new Kullanici()
                 {
                     Adi = "Admin",
+                    Soyadi = "User",
                     Durum = true,
                     KayitTarihi = DateTime.Now,
                     KullaniciAdi = "admin",
