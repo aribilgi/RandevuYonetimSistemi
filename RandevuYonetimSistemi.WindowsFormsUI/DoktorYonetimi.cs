@@ -41,22 +41,26 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
         {
             try
             {
-                var sonuc = manager.Add(new Doktor
+                if (!string.IsNullOrWhiteSpace(txtAdi.Text) & !string.IsNullOrWhiteSpace(txtSoyadi.Text) & !string.IsNullOrWhiteSpace(txtTcNo.Text))
                 {
-                    Adi = txtAdi.Text,
-                    Adres = txtAdres.Text,
-                    Email = txtEmail.Text,
-                    KayitTarihi = DateTime.Now,
-                    Soyadi = txtSoyadi.Text,
-                    TcNo = txtTcNo.Text,
-                    Telefon = txtTelefon.Text
-                });
-                if (sonuc > 0)
-                {
-                    Temizle();
-                    Doldur();
-                    MessageBox.Show("Kayıt Başarılı");
+                    var sonuc = manager.Add(new Doktor
+                    {
+                        Adi = txtAdi.Text,
+                        Adres = txtAdres.Text,
+                        Email = txtEmail.Text,
+                        KayitTarihi = DateTime.Now,
+                        Soyadi = txtSoyadi.Text,
+                        TcNo = txtTcNo.Text,
+                        Telefon = txtTelefon.Text
+                    });
+                    if (sonuc > 0)
+                    {
+                        Temizle();
+                        Doldur();
+                        MessageBox.Show("Kayıt Başarılı");
+                    }
                 }
+                else MessageBox.Show("Adı, Soyadı, TC Numarası Boş Geçilemez!");
             }
             catch (Exception hata)
             {
@@ -64,7 +68,8 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
                 logManager.Add(new Log
                 {
                     CreateDate = DateTime.Now,
-                    Error = hata.Message
+                    Error = hata.Message,
+                    HataBilgi = "Doktor yönetimi, Ekle metodu"
                 });
             }
         }
@@ -86,23 +91,40 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
         {
             int id = (int)dgvDoktorlar.CurrentRow.Cells[0].Value;
 
-            var sonuc = manager.Update(new Doktor
+            if (!string.IsNullOrWhiteSpace(txtAdi.Text) & !string.IsNullOrWhiteSpace(txtSoyadi.Text) & !string.IsNullOrWhiteSpace(txtTcNo.Text))
             {
-                Id = id,
-                Adi = txtAdi.Text,
-                Adres = txtAdres.Text,
-                Email = txtEmail.Text,
-                //KayitTarihi = DateTime.Now,
-                Soyadi = txtSoyadi.Text,
-                TcNo = txtTcNo.Text,
-                Telefon = txtTelefon.Text
-            });
-            if (sonuc > 0)
-            {
-                Temizle();
-                Doldur();
-                MessageBox.Show("Kayıt Başarılı");
+                try
+                {
+                    var sonuc = manager.Update(new Doktor
+                    {
+                        Id = id,
+                        Adi = txtAdi.Text,
+                        Adres = txtAdres.Text,
+                        Email = txtEmail.Text,
+                        //KayitTarihi = DateTime.Now,
+                        Soyadi = txtSoyadi.Text,
+                        TcNo = txtTcNo.Text,
+                        Telefon = txtTelefon.Text
+                    });
+                    if (sonuc > 0)
+                    {
+                        Temizle();
+                        Doldur();
+                        MessageBox.Show("Kayıt Başarılı");
+                    }
+                }
+                catch (Exception hata)
+                {
+                    MessageBox.Show("Hata Oluştu!");
+                    logManager.Add(new Log
+                    {
+                        CreateDate = DateTime.Now,
+                        Error = hata.Message,
+                        HataBilgi = "Doktor yönetimi, Güncelle metodu"
+                    });
+                }
             }
+            else MessageBox.Show("Adı, Soyadı, TC Numarası Boş Geçilemez!");
         }
     }
 }

@@ -100,7 +100,7 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             // 
             this.btnGuncelle.Location = new System.Drawing.Point(287, 159);
             this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(75, 23);
+            this.btnGuncelle.Size = new System.Drawing.Size(82, 23);
             this.btnGuncelle.TabIndex = 8;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
@@ -191,27 +191,27 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(25, 102);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 17);
+            this.label3.Size = new System.Drawing.Size(97, 17);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Tc Numarası";
+            this.label3.Text = "Tc Numarası *";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(25, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 17);
+            this.label2.Size = new System.Drawing.Size(60, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Soyadı";
+            this.label2.Text = "Soyadı *";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(25, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 17);
+            this.label1.Size = new System.Drawing.Size(37, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Adı";
+            this.label1.Text = "Adı *";
             // 
             // DoktorYonetimi
             // 

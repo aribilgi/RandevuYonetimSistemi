@@ -1,4 +1,4 @@
-namespace DAL.Migrations
+﻿namespace DAL.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
@@ -77,6 +77,17 @@ namespace DAL.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
+            CreateTable(
+                "dbo.Logs",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Error = c.String(),
+                        CreateDate = c.DateTime(),
+                        HataBilgi = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
         }
         
         public override void Down()
@@ -87,6 +98,7 @@ namespace DAL.Migrations
             DropIndex("dbo.Randevular", new[] { "DoktorId" });
             DropIndex("dbo.Randevular", new[] { "KullaniciId" });
             DropIndex("dbo.Randevular", new[] { "HastaId" });
+            DropTable("dbo.Logs");
             DropTable("dbo.Kullanicilar");
             DropTable("dbo.Hastalar");
             DropTable("dbo.Randevular");
