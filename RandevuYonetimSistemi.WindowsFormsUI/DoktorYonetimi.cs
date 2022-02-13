@@ -36,6 +36,8 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             txtEmail.Text = string.Empty;
             txtAdres.Text = string.Empty;
             txtAdi.Text = string.Empty;
+            btnGuncelle.Enabled = false;
+            btnSil.Enabled = false;
         }
         private void btnEkle_Click(object sender, EventArgs e)
         {
@@ -76,6 +78,9 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
 
         private void dgvDoktorlar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnGuncelle.Enabled = true;
+            btnSil.Enabled = true;
+
             int id = (int)dgvDoktorlar.CurrentRow.Cells[0].Value;
             var kayit = manager.Find(id);
 
@@ -125,6 +130,24 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
                 }
             }
             else MessageBox.Show("Adı, Soyadı, TC Numarası Boş Geçilemez!");
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Silmek İstiyor Musunuz?", "Uyarı", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            {
+                int id = (int)dgvDoktorlar.CurrentRow.Cells[0].Value;
+                var kayit = manager.Find(id);
+
+                var sonuc = manager.Delete(kayit);
+
+                if (sonuc > 0)
+                {
+                    Temizle();
+                    Doldur();
+                    MessageBox.Show("Kayıt Silindi!");
+                }
+            }
         }
     }
 }

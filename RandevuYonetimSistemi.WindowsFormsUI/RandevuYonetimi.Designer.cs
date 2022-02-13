@@ -31,19 +31,19 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
         {
             this.dgvRandevular = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbHastalar = new System.Windows.Forms.ComboBox();
-            this.cbDoktorlar = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtpRandevuTarihi = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtSikayet = new System.Windows.Forms.RichTextBox();
-            this.cbKronikHastalik = new System.Windows.Forms.CheckBox();
-            this.cbSgk = new System.Windows.Forms.CheckBox();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnEkle = new System.Windows.Forms.Button();
+            this.cbSgk = new System.Windows.Forms.CheckBox();
+            this.cbKronikHastalik = new System.Windows.Forms.CheckBox();
+            this.txtSikayet = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtpRandevuTarihi = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbDoktorlar = new System.Windows.Forms.ComboBox();
+            this.cbHastalar = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRandevular)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,7 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             this.dgvRandevular.RowTemplate.Height = 24;
             this.dgvRandevular.Size = new System.Drawing.Size(776, 220);
             this.dgvRandevular.TabIndex = 1;
+            this.dgvRandevular.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRandevular_CellClick);
             // 
             // groupBox1
             // 
@@ -80,82 +81,37 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Randevu Bilgileri";
             // 
-            // label1
+            // btnSil
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Hasta Adı";
+            this.btnSil.Enabled = false;
+            this.btnSil.Location = new System.Drawing.Point(457, 162);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(75, 23);
+            this.btnSil.TabIndex = 13;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
-            // label2
+            // btnGuncelle
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Doktor";
+            this.btnGuncelle.Enabled = false;
+            this.btnGuncelle.Location = new System.Drawing.Point(325, 162);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(75, 23);
+            this.btnGuncelle.TabIndex = 12;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
-            // cbHastalar
+            // btnEkle
             // 
-            this.cbHastalar.FormattingEnabled = true;
-            this.cbHastalar.Location = new System.Drawing.Point(135, 40);
-            this.cbHastalar.Name = "cbHastalar";
-            this.cbHastalar.Size = new System.Drawing.Size(121, 24);
-            this.cbHastalar.TabIndex = 3;
-            // 
-            // cbDoktorlar
-            // 
-            this.cbDoktorlar.FormattingEnabled = true;
-            this.cbDoktorlar.Location = new System.Drawing.Point(135, 70);
-            this.cbDoktorlar.Name = "cbDoktorlar";
-            this.cbDoktorlar.Size = new System.Drawing.Size(121, 24);
-            this.cbDoktorlar.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(362, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Randevu Tarihi";
-            // 
-            // dtpRandevuTarihi
-            // 
-            this.dtpRandevuTarihi.Location = new System.Drawing.Point(513, 35);
-            this.dtpRandevuTarihi.Name = "dtpRandevuTarihi";
-            this.dtpRandevuTarihi.Size = new System.Drawing.Size(200, 22);
-            this.dtpRandevuTarihi.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(362, 73);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 17);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Şikayet";
-            // 
-            // txtSikayet
-            // 
-            this.txtSikayet.Location = new System.Drawing.Point(513, 73);
-            this.txtSikayet.Name = "txtSikayet";
-            this.txtSikayet.Size = new System.Drawing.Size(200, 46);
-            this.txtSikayet.TabIndex = 8;
-            this.txtSikayet.Text = "";
-            // 
-            // cbKronikHastalik
-            // 
-            this.cbKronikHastalik.AutoSize = true;
-            this.cbKronikHastalik.Location = new System.Drawing.Point(135, 101);
-            this.cbKronikHastalik.Name = "cbKronikHastalik";
-            this.cbKronikHastalik.Size = new System.Drawing.Size(132, 21);
-            this.cbKronikHastalik.TabIndex = 9;
-            this.cbKronikHastalik.Text = "Kronik Hastalık?";
-            this.cbKronikHastalik.UseVisualStyleBackColor = true;
+            this.btnEkle.Location = new System.Drawing.Point(201, 162);
+            this.btnEkle.Name = "btnEkle";
+            this.btnEkle.Size = new System.Drawing.Size(75, 23);
+            this.btnEkle.TabIndex = 11;
+            this.btnEkle.Text = "Ekle";
+            this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // cbSgk
             // 
@@ -167,32 +123,86 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             this.cbSgk.Text = "Sgk?";
             this.cbSgk.UseVisualStyleBackColor = true;
             // 
-            // btnSil
+            // cbKronikHastalik
             // 
-            this.btnSil.Location = new System.Drawing.Point(457, 162);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(75, 23);
-            this.btnSil.TabIndex = 13;
-            this.btnSil.Text = "Sil";
-            this.btnSil.UseVisualStyleBackColor = true;
+            this.cbKronikHastalik.AutoSize = true;
+            this.cbKronikHastalik.Location = new System.Drawing.Point(135, 101);
+            this.cbKronikHastalik.Name = "cbKronikHastalik";
+            this.cbKronikHastalik.Size = new System.Drawing.Size(132, 21);
+            this.cbKronikHastalik.TabIndex = 9;
+            this.cbKronikHastalik.Text = "Kronik Hastalık?";
+            this.cbKronikHastalik.UseVisualStyleBackColor = true;
             // 
-            // btnGuncelle
+            // txtSikayet
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(325, 162);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(75, 23);
-            this.btnGuncelle.TabIndex = 12;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.txtSikayet.Location = new System.Drawing.Point(513, 73);
+            this.txtSikayet.Name = "txtSikayet";
+            this.txtSikayet.Size = new System.Drawing.Size(200, 46);
+            this.txtSikayet.TabIndex = 8;
+            this.txtSikayet.Text = "";
             // 
-            // btnEkle
+            // label4
             // 
-            this.btnEkle.Location = new System.Drawing.Point(201, 162);
-            this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(75, 23);
-            this.btnEkle.TabIndex = 11;
-            this.btnEkle.Text = "Ekle";
-            this.btnEkle.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(362, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Şikayet";
+            // 
+            // dtpRandevuTarihi
+            // 
+            this.dtpRandevuTarihi.Location = new System.Drawing.Point(513, 35);
+            this.dtpRandevuTarihi.Name = "dtpRandevuTarihi";
+            this.dtpRandevuTarihi.Size = new System.Drawing.Size(200, 22);
+            this.dtpRandevuTarihi.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(362, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Randevu Tarihi";
+            // 
+            // cbDoktorlar
+            // 
+            this.cbDoktorlar.DisplayMember = "Adi";
+            this.cbDoktorlar.FormattingEnabled = true;
+            this.cbDoktorlar.Location = new System.Drawing.Point(135, 70);
+            this.cbDoktorlar.Name = "cbDoktorlar";
+            this.cbDoktorlar.Size = new System.Drawing.Size(121, 24);
+            this.cbDoktorlar.TabIndex = 4;
+            this.cbDoktorlar.ValueMember = "Id";
+            // 
+            // cbHastalar
+            // 
+            this.cbHastalar.DisplayMember = "Adi";
+            this.cbHastalar.FormattingEnabled = true;
+            this.cbHastalar.Location = new System.Drawing.Point(135, 40);
+            this.cbHastalar.Name = "cbHastalar";
+            this.cbHastalar.Size = new System.Drawing.Size(121, 24);
+            this.cbHastalar.TabIndex = 3;
+            this.cbHastalar.ValueMember = "Id";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Doktor";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Hasta Adı";
             // 
             // RandevuYonetimi
             // 
@@ -204,6 +214,7 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             this.Name = "RandevuYonetimi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Randevu Yönetimi";
+            this.Load += new System.EventHandler(this.RandevuYonetimi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRandevular)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

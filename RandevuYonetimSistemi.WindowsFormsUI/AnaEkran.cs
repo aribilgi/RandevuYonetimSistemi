@@ -40,5 +40,10 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             RandevuYonetimi randevuYonetimi = new RandevuYonetimi();
             randevuYonetimi.ShowDialog();
         }
+
+        private void AnaEkran_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
