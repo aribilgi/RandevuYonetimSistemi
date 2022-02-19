@@ -1,12 +1,5 @@
 ﻿using BL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RandevuYonetimSistemi.WindowsFormsUI
@@ -17,11 +10,16 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
         {
             InitializeComponent();
         }
-        KullaniciManager manager = new KullaniciManager();
+        //KullaniciManager manager = new KullaniciManager();
+        LoginManager loginManager = new LoginManager();
+
         public static int kullId = 0;
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            var kullanici = manager.Get(kullaniciAdi: txtKullaniciAdi.Text.Trim(), sifre: txtSifre.Text.Trim());
+            //var kullanici = manager.Get(kullaniciAdi: txtKullaniciAdi.Text.Trim(), sifre: txtSifre.Text.Trim());
+
+            var kullanici = loginManager.Get(kul => kul.KullaniciAdi == txtKullaniciAdi.Text.Trim() & kul.Sifre == txtSifre.Text.Trim());
+            //trim metodu textboxdan gelen datanın önündeki ve sonundaki boşlukları kaldırır
             if (kullanici != null)
             {
                 kullId = kullanici.Id;
