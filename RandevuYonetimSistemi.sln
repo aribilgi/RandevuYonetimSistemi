@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{AAE86705-236E-42D7-9873-BD842BC96CBF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandevuYonetimSistemi.WebFormUI", "RandevuYonetimSistemi.WebFormUI\RandevuYonetimSistemi.WebFormUI.csproj", "{0056E72A-9226-4832-89B9-261F4A8F269B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{AAE86705-236E-42D7-9873-BD842BC96CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAE86705-236E-42D7-9873-BD842BC96CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAE86705-236E-42D7-9873-BD842BC96CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0056E72A-9226-4832-89B9-261F4A8F269B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0056E72A-9226-4832-89B9-261F4A8F269B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0056E72A-9226-4832-89B9-261F4A8F269B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0056E72A-9226-4832-89B9-261F4A8F269B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
