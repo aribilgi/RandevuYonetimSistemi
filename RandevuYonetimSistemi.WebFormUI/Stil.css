@@ -1,0 +1,17 @@
+﻿body {
+}
+
+ul#menu li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color:black;
+}
+
+a:hover {
+    color: red;
+    border-bottom: 2px solid red;
+}

@@ -5,11 +5,29 @@
 <html>
 <head runat="server">
     <title></title>
+    <link href="Stil.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
+        <header>
+            <ul id="menu">
+                <li>
+                    <a href="DoktorYonetimi.aspx">Doktor Yönetimi</a>
+                </li>
+                <li>
+                    <a href="HastaYonetimi.aspx">Hasta Yönetimi</a>
+                </li>
+                <li>
+                    <a href="KullaniciYonetimi.aspx">Kullanıcı Yönetimi</a>
+                </li>
+                <li>
+                    <a href="RandevuYonetimi.aspx">Randevu Yönetimi</a>
+                </li>
+            </ul>
+        </header>
+        <hr />
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 
