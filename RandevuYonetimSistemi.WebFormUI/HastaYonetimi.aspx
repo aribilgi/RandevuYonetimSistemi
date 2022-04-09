@@ -34,30 +34,35 @@
                 <td>Adı</td>
                 <td>
                     <asp:TextBox ID="txtAdi" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtAdi" ErrorMessage="Boş Geçilemez!" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td>Soyadı</td>
                 <td>
                     <asp:TextBox ID="txtSoyadi" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtSoyadi" ErrorMessage="Boş Geçilemez!" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td>Tc Numarası</td>
                 <td>
                     <asp:TextBox ID="txtTcNo" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtTcNo" ErrorMessage="Boş Geçilemez!" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td>Yaş</td>
                 <td>
                     <asp:TextBox ID="txtYas" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtYas" ErrorMessage="Boş Geçilemez!" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td>Telefon</td>
                 <td>
                     <asp:TextBox ID="txtTelefon" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtTelefon" ErrorMessage="Boş Geçilemez!" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -94,8 +99,8 @@
                 <td>&nbsp;</td>
                 <td>
                     <asp:Button ID="btnEkle" runat="server" OnClick="btnEkle_Click" Text="Ekle" />
-                    <asp:Button ID="btnGuncelle" runat="server" Text="Güncelle" Enabled="False" />
-                    <asp:Button ID="btnSil" runat="server" Text="Sil" Enabled="False" />
+                    <asp:Button ID="btnGuncelle" runat="server" Text="Güncelle" Enabled="False" OnClick="btnGuncelle_Click" />
+                    <asp:Button ID="btnSil" runat="server" Text="Sil" Enabled="False" OnClick="btnSil_Click" />
                 </td>
             </tr>
         </table>

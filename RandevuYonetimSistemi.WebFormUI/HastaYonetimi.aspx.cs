@@ -86,5 +86,72 @@ namespace RandevuYonetimSistemi.WebFormUI
                 Response.Write("<script>alert('Hata Oluştu!')</script>");
             }
         }
+
+        protected void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtAdi.Text) & !string.IsNullOrWhiteSpace(txtSoyadi.Text) & !string.IsNullOrWhiteSpace(txtTcNo.Text) & !string.IsNullOrWhiteSpace(txtTelefon.Text) & !string.IsNullOrWhiteSpace(txtYas.Text))
+            {
+                try
+                {
+                    int id = Convert.ToInt32(dgvHastalar.SelectedRow.Cells[1].Text);
+                    var sonuc = manager.Update(new Hasta
+                    {
+                        Id = id,
+                        Adi = txtAdi.Text,
+                        Adres = txtAdres.Text,
+                        Email = txtEmail.Text,
+                        KayitTarihi = Convert.ToDateTime(dgvHastalar.SelectedRow.Cells[12].Text),
+                        HastaYakinBilgisi = txtHastaYakinBilgisi.Text,
+                        KanGrubu = txtKanGrubu.Text,
+                        Meslek = txtMeslek.Text,
+                        Soyadi = txtSoyadi.Text,
+                        TcNo = txtTcNo.Text,
+                        Telefon = txtTelefon.Text,
+                        Yasi = Convert.ToInt32(txtYas.Text)
+                    });
+                    if (sonuc > 0)
+                    {
+                        Response.Redirect("HastaYonetimi.aspx");
+                    }
+                }
+                catch (Exception hata)
+                {
+                    logManager.Add(new Log
+                    {
+                        CreateDate = DateTime.Now,
+                        Error = hata.Message,
+                        HataBilgi = "Hasta yönetimi, Güncelle metodu"
+                    });
+                    Response.Write("<script>alert('Hata Oluştu!')</script>");
+                }
+            }
+            else Response.Write("<script>alert('Adı, Soyadı, TC Numarası, Telefon, Yaş Boş Geçilemez!')</script>");
+        }
+
+        protected void btnSil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = Convert.ToInt32(dgvHastalar.SelectedRow.Cells[1].Text);
+                var kayit = manager.Find(id);
+
+                var sonuc = manager.Delete(kayit);
+
+                if (sonuc > 0)
+                {
+                    Response.Redirect("HastaYonetimi.aspx");
+                }
+            }
+            catch (Exception hata)
+            {
+                logManager.Add(new Log
+                {
+                    CreateDate = DateTime.Now,
+                    Error = hata.Message,
+                    HataBilgi = "Hasta yönetimi, Sil metodu"
+                });
+                Response.Write("<script>alert('Hata Oluştu!')</script>");
+            }
+        }
     }
 }
