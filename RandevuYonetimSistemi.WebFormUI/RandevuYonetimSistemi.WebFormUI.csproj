@@ -78,6 +78,8 @@
     <Content Include="DoktorYonetimi.aspx" />
     <Content Include="Global.asax" />
     <Content Include="HastaYonetimi.aspx" />
+    <Content Include="KullaniciYonetimi.aspx" />
+    <Content Include="RandevuYonetimi.aspx" />
     <Content Include="Stil.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -113,7 +115,21 @@
     <Compile Include="HastaYonetimi.aspx.designer.cs">
       <DependentUpon>HastaYonetimi.aspx</DependentUpon>
     </Compile>
+    <Compile Include="KullaniciYonetimi.aspx.cs">
+      <DependentUpon>KullaniciYonetimi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KullaniciYonetimi.aspx.designer.cs">
+      <DependentUpon>KullaniciYonetimi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandevuYonetimi.aspx.cs">
+      <DependentUpon>RandevuYonetimi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RandevuYonetimi.aspx.designer.cs">
+      <DependentUpon>RandevuYonetimi.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="AnaEkran.Master" />

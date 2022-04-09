@@ -1,12 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AnaEkran.Master" AutoEventWireup="true" CodeBehind="DoktorYonetimi.aspx.cs" Inherits="RandevuYonetimSistemi.WebFormUI.DoktorYonetimi" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AnaEkran.Master" AutoEventWireup="true" CodeBehind="KullaniciYonetimi.aspx.cs" Inherits="RandevuYonetimSistemi.WebFormUI.KullaniciYonetimi" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <%--<style>
-        body {
-            background-color: red;
-            color: white;
-        }
-    </style>--%>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -15,19 +9,8 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table>
-        <tr>
-            <td>
-                <h1>Doktor Yönetimi</h1>
-            </td>
-            <td>
-                <asp:TextBox ID="txtAra" runat="server" ValidationGroup="ara"></asp:TextBox>
-                <asp:Button ID="btnAra" runat="server" Text="Ara" OnClick="btnAra_Click" ValidationGroup="ara" />
-            </td>
-        </tr>
-    </table>
-
-    <asp:GridView ID="dgvDoktorlar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="dgvDoktorlar_SelectedIndexChanged">
+    <h1>Kullanıcı Yönetimi</h1>
+    <asp:GridView ID="dgvKullanicilar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="dgvKullanicilar_SelectedIndexChanged">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:CommandField ShowSelectButton="True" />
@@ -45,6 +28,7 @@
     </asp:GridView>
     <hr />
     <div>
+
         <table class="auto-style1">
             <tr>
                 <td>Adı</td>
@@ -61,36 +45,37 @@
                 </td>
             </tr>
             <tr>
-                <td>TC No</td>
-                <td>
-                    <asp:TextBox ID="txtTcNo" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtTcNo" ErrorMessage="Boş Geçilemez!" ForeColor="Red"></asp:RequiredFieldValidator>
-                </td>
-            </tr>
-            <tr>
-                <td>Telefon</td>
-                <td>
-                    <asp:TextBox ID="txtTelefon" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
                 <td>Email</td>
                 <td>
                     <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td>Adres</td>
+                <td>Kullanıcı Adı</td>
                 <td>
-                    <asp:TextBox ID="txtAdres" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtKullaniciAdi" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtKullaniciAdi" ErrorMessage="Boş Geçilemez!" ForeColor="Red"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td>Şifre</td>
+                <td>
+                    <asp:TextBox ID="txtSifre" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtSifre" ErrorMessage="Boş Geçilemez!" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
                 <td>
-                    <asp:Button ID="btnEkle" runat="server" Text="Ekle" OnClick="btnEkle_Click" />
-                    <asp:Button ID="btnGuncelle" runat="server" Text="Güncelle" Enabled="False" OnClick="btnGuncelle_Click" />
-                    <asp:Button ID="btnSil" runat="server" Text="Sil" Enabled="False" OnClick="btnSil_Click" />
+                    <asp:CheckBox ID="cbDurum" runat="server" Text="Durum" />
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <asp:Button ID="btnEkle" runat="server" OnClick="btnEkle_Click" Text="Ekle" />
+                    <asp:Button ID="btnGuncelle" runat="server" Enabled="False" OnClick="btnGuncelle_Click" Text="Güncelle" />
+                    <asp:Button ID="btnSil" runat="server" Enabled="False" OnClick="btnSil_Click" Text="Sil" />
                 </td>
             </tr>
         </table>

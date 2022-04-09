@@ -10,6 +10,10 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Hasta Yönetimi</h1>
+    <div>
+        <asp:TextBox ID="txtAra" runat="server" OnTextChanged="txtAra_TextChanged" placeholder="Hasta Adı, Soyadı ve TC No Giriniz" Width="300" AutoPostBack="True"></asp:TextBox>
+    </div>
+    <hr />
     <asp:GridView ID="dgvHastalar" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="dgvHastalar_SelectedIndexChanged">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>

@@ -136,5 +136,11 @@ namespace RandevuYonetimSistemi.WebFormUI
                 Response.Write("<script>alert('Hata Oluştu!')</script>");
             }
         }
+
+        protected void btnAra_Click(object sender, EventArgs e)
+        {
+            dgvDoktorlar.DataSource = manager.GetAll(d => d.Adi.Contains(txtAra.Text.Trim()) | d.Soyadi.Contains(txtAra.Text.Trim()));
+            dgvDoktorlar.DataBind();
+        }
     }
 }

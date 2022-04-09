@@ -15,6 +15,24 @@ namespace RandevuYonetimSistemi.WebFormUI
     {
 
         /// <summary>
+        /// txtAra control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAra;
+
+        /// <summary>
+        /// btnAra control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAra;
+
+        /// <summary>
         /// dgvDoktorlar control.
         /// </summary>
         /// <remarks>
@@ -33,6 +51,15 @@ namespace RandevuYonetimSistemi.WebFormUI
         protected global::System.Web.UI.WebControls.TextBox txtAdi;
 
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+
+        /// <summary>
         /// txtSoyadi control.
         /// </summary>
         /// <remarks>
@@ -42,6 +69,15 @@ namespace RandevuYonetimSistemi.WebFormUI
         protected global::System.Web.UI.WebControls.TextBox txtSoyadi;
 
         /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+
+        /// <summary>
         /// txtTcNo control.
         /// </summary>
         /// <remarks>
@@ -49,6 +85,15 @@ namespace RandevuYonetimSistemi.WebFormUI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTcNo;
+
+        /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
 
         /// <summary>
         /// txtTelefon control.
