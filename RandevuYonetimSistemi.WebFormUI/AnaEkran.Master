@@ -26,6 +26,12 @@
                 <li>
                     <a href="RandevuYonetimi.aspx">Randevu Yönetimi</a>
                 </li>
+                <li>
+                    <a href="LogKayitlari.aspx">Log Kayıtları</a>
+                </li>
+                <li>
+                    <asp:LinkButton ID="lbCikis" runat="server" OnClick="lbCikis_Click" ValidationGroup="cikis">Oturumu Kapat</asp:LinkButton>
+                </li>
             </ul>
         </header>
         <hr />

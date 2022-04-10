@@ -82,7 +82,7 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 107);
+            this.label2.Location = new System.Drawing.Point(37, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 17);
             this.label2.TabIndex = 1;
@@ -91,7 +91,7 @@ namespace RandevuYonetimSistemi.WindowsFormsUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 72);
+            this.label1.Location = new System.Drawing.Point(37, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 17);
             this.label1.TabIndex = 0;
