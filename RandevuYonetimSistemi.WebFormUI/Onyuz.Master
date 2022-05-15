@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Onyuz.master.cs" Inherits="RandevuYonetimSistemi.WebFormUI.Onyuz" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                    <img src="Images/logo-ikon.png" height="40" title="Anasayfa" />
+                </a>
+
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/" class="nav-link px-2 link-secondary">Anasayfa</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Hakkımızda</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Fiyatlar</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Sık Sorulan Sorular</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">İletişim</a></li>
+                </ul>
+
+                <div class="col-md-3 text-end">
+                    <a href="/Signin.aspx" class="btn btn-outline-primary me-2">Giriş Yap</a>
+                    <a href="/SignUp.aspx" class="btn btn-primary">Kayıt Ol</a>
+                </div>
+            </header>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                    <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                        <img src="Images/logo-ikon.png" width="30" />
+                    </a>
+                    <span class="mb-3 mb-md-0 text-muted">© 2022 Arı Sağlık Grubu</span>
+                </div>
+
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                    <li class="ms-3"><a class="text-muted" href="#">
+                        <i class="bi bi-twitter"></i></a></li>
+                    <li class="ms-3"><a class="text-muted" href="#">
+                        <i class="bi bi-instagram"></i></a></li>
+                    <li class="ms-3"><a class="text-muted" href="#">
+                        <i class="bi bi-facebook"></i></a></li>
+                </ul>
+            </footer>
+        </div>
+    </form>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+</body>
+</html>
