@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContactManager.cs" />
     <Compile Include="DoktorManager.cs" />
     <Compile Include="HastaManager.cs" />
     <Compile Include="IRepository.cs" />

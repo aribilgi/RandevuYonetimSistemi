@@ -12,6 +12,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="container">
             <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
                 <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
@@ -23,7 +24,7 @@
                     <li><a href="#" class="nav-link px-2 link-dark">Hakkımızda</a></li>
                     <li><a href="#" class="nav-link px-2 link-dark">Fiyatlar</a></li>
                     <li><a href="#" class="nav-link px-2 link-dark">Sık Sorulan Sorular</a></li>
-                    <li><a href="#" class="nav-link px-2 link-dark">İletişim</a></li>
+                    <li><a href="ContactUs.aspx" class="nav-link px-2 link-dark">İletişim</a></li>
                 </ul>
 
                 <div class="col-md-3 text-end">

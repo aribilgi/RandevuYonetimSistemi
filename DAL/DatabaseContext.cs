@@ -11,6 +11,7 @@ namespace DAL
             Database.SetInitializer(new DbInitializer()); // EF Database.SetInitializer metoduna kendi yaptýðýmýz DbInitializer sýnýfýný yolladýk
         }
         //DbSetler veritabaný tablolarýmýzý temsil eden yapýlardýr
+        public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Doktor> Doktorlar { get; set; }
         public virtual DbSet<Hasta> Hastalar { get; set; }
         public virtual DbSet<Kullanici> Kullanicilar { get; set; }
