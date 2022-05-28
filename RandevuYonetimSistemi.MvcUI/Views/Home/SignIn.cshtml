@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Hasta Girişi";
+}
+
+<main class="form-signin text-center">
+    <form action="/SignIn" method="post" class="col-md-5 mx-auto">
+        <h1 class="h3 mb-3 fw-normal">Hasta Girişi</h1>
+
+        <div class="form-floating">
+            <input name="email" type="email" class="form-control" id="floatingInput" placeholder="mail@ornek.com">
+            <label for="floatingInput">Email</label>
+        </div>
+        <div class="form-floating">
+            <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Şifre">
+            <label for="floatingPassword">Şifre</label>
+        </div>
+        
+        <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Giriş Yap</button>
+        
+    </form>
+</main>
