@@ -17,5 +17,6 @@ namespace DAL
         public virtual DbSet<Kullanici> Kullanicilar { get; set; }
         public virtual DbSet<Randevu> Randevular { get; set; }
         public virtual DbSet<Log> Logs { get; set; }
+        public virtual DbSet<Page> Pages { get; set; }
     }
 }

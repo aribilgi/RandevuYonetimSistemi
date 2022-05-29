@@ -20,7 +20,7 @@ namespace Entities
         [StringLength(50)]
         public string Email { get; set; }
         public string Adres { get; set; }
-        public DateTime? KayitTarihi { get; set; }
+        public DateTime? KayitTarihi { get; set; } = DateTime.Now; // varsayılan olarak eklenme zamanını kaydet
         public virtual List<Randevu> Randevular { get; set; }
     }
 }
