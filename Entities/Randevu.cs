@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities
@@ -10,8 +11,11 @@ namespace Entities
         public int HastaId { get; set; }
         public int KullaniciId { get; set; }
         public int DoktorId { get; set; }
+        [Display(Name = "Randevu Tarihi"), DataType(DataType.Date)]
         public DateTime RandevuTarihi { get; set; }
+        [Display(Name = "Şikayet")]
         public string Sikayet { get; set; }
+        [Display(Name = "Kronik Hastalık?")]
         public bool KronikHastalik { get; set; }
         public bool Sgk { get; set; }
         public virtual Hasta Hasta { get; set; }

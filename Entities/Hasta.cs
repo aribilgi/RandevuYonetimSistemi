@@ -13,7 +13,7 @@ namespace Entities
         public string Adi { get; set; }
         [StringLength(50), Required, Display(Name = "Soyadınız")]
         public string Soyadi { get; set; }
-        [StringLength(11), Required, Display(Name = "TC Kimlik Numarası")]
+        [StringLength(11), Required, Display(Name = "TC Kimlik No")]
         public string TcNo { get; set; }
         [Display(Name = "Hasta Yaşı")]
         public int Yasi { get; set; }
@@ -31,6 +31,7 @@ namespace Entities
         public string KanGrubu { get; set; }
         [StringLength(50)]
         public string Meslek { get; set; }
+        [Display(Name = "Kayıt Tarihi")]
         public DateTime? KayitTarihi { get; set; } = DateTime.Now; // varsayılan değer şimdiki zaman
         public virtual List<Randevu> Randevular { get; set; }
     }

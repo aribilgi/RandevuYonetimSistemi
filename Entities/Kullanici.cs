@@ -8,17 +8,18 @@ namespace Entities
     public class Kullanici : IEntity
     {
         public int Id { get; set; }
-        [StringLength(50), Required]
+        [StringLength(50), Required, Display(Name = "Kullanıcı Adı")]
         public string KullaniciAdi { get; set; }
-        [StringLength(50), Required]
+        [StringLength(50), Required, Display(Name = "Şifre")]
         public string Sifre { get; set; }
-        [StringLength(50), Required]
+        [StringLength(50), Required, Display(Name = "Adı")]
         public string Adi { get; set; }
-        [StringLength(50), Required]
+        [StringLength(50), Required, Display(Name = "Soyadı")]
         public string Soyadi { get; set; }
         [StringLength(50)]
         public string Email { get; set; }
         public bool Durum { get; set; }
+        [Display(Name = "Kayıt Tarihi")]
         public DateTime? KayitTarihi { get; set; }
     }
 }
