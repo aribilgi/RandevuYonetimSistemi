@@ -259,6 +259,7 @@
     <Content Include="Areas\Admin\Views\Logs\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Randevular\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Randevular\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Randevular\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <None Include="Scripts\jquery-3.6.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />

@@ -9,6 +9,10 @@ namespace RandevuYonetimSistemi.MvcUI.Areas.Admin.Controllers
     {
         RandevuManager manager = new RandevuManager();
         LogManager logManager = new LogManager();
+        DoktorManager doktorManager = new DoktorManager();
+        HastaManager hastaManager = new HastaManager();
+        KullaniciManager kullaniciManager = new KullaniciManager();
+
         // GET: Admin/Randevular
         public ActionResult Index()
         {
@@ -24,6 +28,9 @@ namespace RandevuYonetimSistemi.MvcUI.Areas.Admin.Controllers
         // GET: Admin/Randevular/Create
         public ActionResult Create()
         {
+            ViewBag.KullaniciId = new SelectList(kullaniciManager.GetAll(), "Id", "Adi");
+            ViewBag.HastaId = new SelectList(hastaManager.GetAll(), "Id", "Adi");
+            ViewBag.DoktorId = new SelectList(doktorManager.GetAll(), "Id", "Adi"); // Ön yüz view sayfasındaki dropdown list e bu şekilde ViewBag ile veri gönderiyoruz
             return View();
         }
 
@@ -49,13 +56,19 @@ namespace RandevuYonetimSistemi.MvcUI.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Hata Oluştu!");
                 }
             }
+            ViewBag.KullaniciId = new SelectList(kullaniciManager.GetAll(), "Id", "Adi");
+            ViewBag.HastaId = new SelectList(hastaManager.GetAll(), "Id", "Adi");
+            ViewBag.DoktorId = new SelectList(doktorManager.GetAll(), "Id", "Adi");
             return View(randevu);
         }
 
         // GET: Admin/Randevular/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            ViewBag.KullaniciId = new SelectList(kullaniciManager.GetAll(), "Id", "Adi");
+            ViewBag.HastaId = new SelectList(hastaManager.GetAll(), "Id", "Adi");
+            ViewBag.DoktorId = new SelectList(doktorManager.GetAll(), "Id", "Adi");
+            return View(manager.Find(id));
         }
 
         // POST: Admin/Randevular/Edit/5

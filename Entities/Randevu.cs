@@ -8,8 +8,11 @@ namespace Entities
     public class Randevu : IEntity
     {
         public int Id { get; set; }
+        [Display(Name = "Hasta")]
         public int HastaId { get; set; }
+        [Display(Name = "Kullanıcı")]
         public int KullaniciId { get; set; }
+        [Display(Name = "Doktor")]
         public int DoktorId { get; set; }
         [Display(Name = "Randevu Tarihi"), DataType(DataType.Date)]
         public DateTime RandevuTarihi { get; set; }

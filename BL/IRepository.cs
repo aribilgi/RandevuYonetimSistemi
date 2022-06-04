@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace BL
@@ -8,6 +9,7 @@ namespace BL
     {
         List<T> GetAll();
         List<T> GetAll(Expression<Func<T, bool>> expression);
+        IQueryable<T> GetAllInclude(string table);
         T Find(int id);
         T Get();
         T Get(Expression<Func<T, bool>> expression);

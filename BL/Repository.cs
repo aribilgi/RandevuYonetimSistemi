@@ -11,8 +11,8 @@ namespace BL
 {
     public class Repository<T> : IRepository<T> where T : class, IEntity, new() //  where T : class, IEntity, new() nin anlamı > Bu repository e gelecek olan T nesnesi bir class olmalı, Ientity ile işaretlediğimiz interface ten kalıtım almalı ve new lenebilir bir class olmalı yani string olmamalı!
     {
-        DatabaseContext context;
-        DbSet<T> _objectSet;
+        protected DatabaseContext context;
+        protected DbSet<T> _objectSet;
         public Repository()
         {
             if (context == null) // Eğer context nesnemiz boşsa
@@ -56,6 +56,11 @@ namespace BL
         public List<T> GetAll(Expression<Func<T, bool>> expression)
         {
             return _objectSet.Where(expression).ToList();
+        }
+
+        public IQueryable<T> GetAllInclude(string table)
+        {
+            return _objectSet.Include(table); // EF Include metodu çalıştığı class ile parametreden gelen table isimli class ı birleştirip join yapar.
         }
 
         public int SaveChanges()
