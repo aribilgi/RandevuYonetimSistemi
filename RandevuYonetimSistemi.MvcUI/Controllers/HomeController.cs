@@ -10,6 +10,7 @@ namespace RandevuYonetimSistemi.MvcUI.Controllers
         ContactManager contactManager = new ContactManager();
         HastaManager hastaManager = new HastaManager();
         LogManager logManager = new LogManager();
+        PageManager pageManager = new PageManager();
 
         public ActionResult Index()
         {
@@ -101,6 +102,15 @@ namespace RandevuYonetimSistemi.MvcUI.Controllers
                 }
             }
             return View(hasta);
+        }
+
+        public ActionResult _PartialMenu()
+        {
+            return PartialView(pageManager.GetAll(p => p.IsActive == true & p.IsTopMenu == true)); // Geriye partial view dön
+        }
+        public ActionResult Page(int id)
+        {
+            return View(pageManager.Find(id));
         }
     }
 }

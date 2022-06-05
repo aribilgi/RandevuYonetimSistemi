@@ -14,7 +14,7 @@ namespace Entities
         public int KullaniciId { get; set; }
         [Display(Name = "Doktor")]
         public int DoktorId { get; set; }
-        [Display(Name = "Randevu Tarihi"), DataType(DataType.Date)]
+        [Display(Name = "Randevu Tarihi")]
         public DateTime RandevuTarihi { get; set; }
         [Display(Name = "Şikayet")]
         public string Sikayet { get; set; }

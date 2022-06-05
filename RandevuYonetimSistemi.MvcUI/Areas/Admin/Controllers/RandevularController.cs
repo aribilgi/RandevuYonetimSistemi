@@ -16,7 +16,8 @@ namespace RandevuYonetimSistemi.MvcUI.Areas.Admin.Controllers
         // GET: Admin/Randevular
         public ActionResult Index()
         {
-            return View(manager.GetAll());
+            //return View(manager.GetAll()); sadece randevuları listeler
+            return View(manager.GetAllInclude("Hasta")); // GetAllInclude metodu randevular ile hasta tablosunu join yöntemiyle birleştirir
         }
 
         // GET: Admin/Randevular/Details/5
@@ -73,24 +74,28 @@ namespace RandevuYonetimSistemi.MvcUI.Areas.Admin.Controllers
 
         // POST: Admin/Randevular/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Randevu randevu)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                try
+                {
+                    // TODO: Add update logic here
+                    manager.Update(randevu);
+                    return RedirectToAction("Index");
+                }
+                catch
+                {
+                    ModelState.AddModelError("", "Hata Oluştu!");
+                }
             }
-            catch
-            {
-                return View();
-            }
+            return View(randevu);
         }
 
         // GET: Admin/Randevular/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(manager.Find(id));
         }
 
         // POST: Admin/Randevular/Delete/5
@@ -100,7 +105,7 @@ namespace RandevuYonetimSistemi.MvcUI.Areas.Admin.Controllers
             try
             {
                 // TODO: Add delete logic here
-
+                manager.Delete(manager.Find(id));
                 return RedirectToAction("Index");
             }
             catch

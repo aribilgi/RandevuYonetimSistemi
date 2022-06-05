@@ -131,6 +131,7 @@
     <Compile Include="Areas\Admin\Controllers\HastalarController.cs" />
     <Compile Include="Areas\Admin\Controllers\KullanicilarController.cs" />
     <Compile Include="Areas\Admin\Controllers\LogsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PagesController.cs" />
     <Compile Include="Areas\Admin\Controllers\RandevularController.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
@@ -260,6 +261,11 @@
     <Content Include="Areas\Admin\Views\Randevular\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Randevular\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Randevular\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Randevular\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Pages\Delete.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <None Include="Scripts\jquery-3.6.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
@@ -286,6 +292,8 @@
     <Content Include="Views\Home\ContactUs.cshtml" />
     <Content Include="Views\Home\SignUp.cshtml" />
     <Content Include="Views\Home\SignIn.cshtml" />
+    <Content Include="Views\Shared\_PartialMenu.cshtml" />
+    <Content Include="Views\Home\Page.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

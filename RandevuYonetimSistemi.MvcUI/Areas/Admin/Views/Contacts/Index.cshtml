@@ -7,7 +7,7 @@
 <h2>İletişim Talepleri</h2>
 
 <p>
-    @Html.ActionLink("Yeni Ekle", "Create")
+    
 </p>
 <table class="table">
     <tr>
@@ -54,9 +54,8 @@
                 @Html.DisplayFor(modelItem => item.CreateDate)
             </td>
             <td>
-                @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }) |
-
-                @Html.ActionLink("Sil", "Delete", new { id = item.Id })
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }, new { @class = "btn btn-sm btn-primary" }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-sm btn-danger" })
             </td>
         </tr>
     }

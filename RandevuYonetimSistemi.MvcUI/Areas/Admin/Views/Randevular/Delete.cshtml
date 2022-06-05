@@ -1,0 +1,57 @@
+﻿@model Entities.Randevu
+
+@{
+    ViewBag.Title = "Sil";
+}
+
+<h2>Sil</h2>
+
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Randevu Bilgileri</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RandevuTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RandevuTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sikayet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sikayet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KronikHastalik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KronikHastalik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sgk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sgk)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Listeye Dön", "Index")
+        </div>
+    }
+</div>
