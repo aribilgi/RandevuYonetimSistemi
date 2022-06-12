@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Entities;
 using BL;
 
 namespace RandevuYonetimSistemi.MvcUI.Areas.Admin.Controllers
 {
+    [Authorize]
     public class KullanicilarController : Controller
     {
         KullaniciManager manager = new KullaniciManager();

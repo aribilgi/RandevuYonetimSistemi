@@ -5,6 +5,7 @@ using Entities;
 
 namespace RandevuYonetimSistemi.MvcUI.Areas.Admin.Controllers
 {
+    [Authorize]
     public class RandevularController : Controller
     {
         RandevuManager manager = new RandevuManager();

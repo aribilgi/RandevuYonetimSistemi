@@ -4,6 +4,7 @@ using BL;
 
 namespace RandevuYonetimSistemi.MvcUI.Areas.Admin.Controllers
 {
+    [Authorize]
     public class DoktorlarController : Controller
     {
         DoktorManager manager = new DoktorManager();

@@ -5,6 +5,7 @@ using Entities;
 
 namespace RandevuYonetimSistemi.MvcUI.Areas.Admin.Controllers
 {
+    [Authorize]
     public class LogsController : Controller
     {
         LogManager manager = new LogManager();

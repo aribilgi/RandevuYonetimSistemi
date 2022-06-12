@@ -4,6 +4,7 @@ using Entities;
 
 namespace RandevuYonetimSistemi.MvcUI.Areas.Admin.Controllers
 {
+    [Authorize] // Authentication u yani oturum açılmasını zorunlu kıldık.
     public class ContactsController : Controller
     {
         ContactManager manager = new ContactManager();
